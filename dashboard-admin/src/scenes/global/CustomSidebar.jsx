@@ -47,14 +47,16 @@ const CustomSidebar = () => {
                 "& .ps-sidebar-container": {
                     background: `${colors.primary[400]} !important`,
                 },
-                "& .ps-menu-button": {
-                    backgroundColor: "transparent !important",
-                },
-                "& .ps-menuitem-root": {
-                    padding: "5px 35px 5px 20px !important",
-                },
+                // "& .ps-menu-button": {
+                //     backgroundColor: "transparent !important",
+                // },
+                // "& .ps-menuitem-root": {
+                //     padding: "5px 35px 5px 20px !important",
+                // },
                 "& .ps-menuitem-root:hover": {
                     color: "#868dfb !important",
+                    backgroundColor: "#4c4fa3 !important",
+                    borderRadius: "8px",
                 },
                 "& .ps-active": {
                     color: "#6870fa !important",
@@ -68,7 +70,7 @@ const CustomSidebar = () => {
                         onClick={() => setIsCollapsed(!isCollapsed)}
                         icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
                         style={{
-                            margin: "10px 0 20px 0",
+                            margin: "15px 0 30px 0",
                             color: colors.grey[100],
                         }}
                     >
@@ -77,9 +79,14 @@ const CustomSidebar = () => {
                                 display="flex"
                                 justifyContent="space-between"
                                 alignItems="center"
-                                ml="15px"
+                                ml="10px"
                             >
-                                <Typography variant="h3" color={colors.grey[100]}>
+                                <Typography
+                                    variant="h4"
+                                    color={colors.grey[100]}
+                                    fontWeight="bold"
+                                    sx={{ letterSpacing: 2 }}
+                                >
                                     ADMINIS
                                 </Typography>
                                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
@@ -95,11 +102,17 @@ const CustomSidebar = () => {
                             <Box display="flex" justifyContent="center" alignItems="center">
                                 <img
                                     alt="profile-user"
-                                    width="100px"
-                                    height="100px"
-                                    src={`../../assets/astronaut-dark-3840x2160-22768.jpg`}
-                                    style={{ cursor: "pointer", borderRadius: "50%" }}
+                                    width="80px"
+                                    height="80px"
+                                    src={`../../assets/astronaut.jpg`}
+                                    style={{
+                                        cursor: "pointer",
+                                        borderRadius: "50%",
+                                        border: "2px solid #868dfb",
+                                        boxShadow: "0px 4px 10px rgba(0,0,0,0.3)"
+                                    }}
                                 />
+
                             </Box>
                             <Box textAlign="center">
                                 <Typography
@@ -127,9 +140,9 @@ const CustomSidebar = () => {
                         />
 
                         <Typography
-                            variant="h6"
+                            variant="overline"
                             color={colors.grey[300]}
-                            sx={{ m: "15px 0 5px 20px" }}
+                            sx={{ m: "20px 0 10px 20px", fontWeight: "bold", letterSpacing: 1 }}
                         >
                             Data
                         </Typography>
@@ -156,9 +169,9 @@ const CustomSidebar = () => {
                         />
 
                         <Typography
-                            variant="h6"
+                            variant="overline"
                             color={colors.grey[300]}
-                            sx={{ m: "15px 0 5px 20px" }}
+                            sx={{ m: "20px 0 10px 20px", fontWeight: "bold", letterSpacing: 1 }}
                         >
                             Pages
                         </Typography>
@@ -185,9 +198,9 @@ const CustomSidebar = () => {
                         />
 
                         <Typography
-                            variant="h6"
+                            variant="overline"
                             color={colors.grey[300]}
-                            sx={{ m: "15px 0 5px 20px" }}
+                            sx={{ m: "20px 0 10px 20px", fontWeight: "bold", letterSpacing: 1 }}
                         >
                             Charts
                         </Typography>
