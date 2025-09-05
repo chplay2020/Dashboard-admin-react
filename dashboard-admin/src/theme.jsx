@@ -1,7 +1,7 @@
 import { createContext, useState, useMemo } from "react"
 import { createTheme } from "@mui/material/styles"
 
-export const tokens = (mode) => ({
+export const tokens = (mode) => ({ // hàm custom tokens để lấy màu theo chế độ dark hay light
     ...(mode === "dark" // "..." trong đoạn code là spread operator, dùng để “trải” các thuộc tính từ object chọn ra (dark hoặc light) vào object trả về.
         ? {
             grey: {
@@ -202,10 +202,12 @@ export const useMode = () => {
     const colorMode = useMemo(
         () => ({
             toggleColorMode: () =>
-                setMode((prev) => (prev === "light" ? "dark" : "light"))
+                setMode((prev) => (prev === "light" ? "dark" : "light")),
         }),
         []
     )
 
     const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
+
+    return [theme, colorMode];
 }
